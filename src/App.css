@@ -1,38 +1,264 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 65%;
+}
+body {
+  background-color: #f1f1f1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button {
+  cursor: pointer;
+}
+header {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  box-shadow: 3px 3px 3px grey;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header .logo img {
+  height: 70px;
+  transition: all 0.2s;
 }
 
-.App-header {
-  background-color: #282c34;
+header .logo img:hover {
+  transform: scale(1.2);
+}
+
+header .navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+header .navbar ul li {
+  margin-left: 50px;
+}
+
+header .navbar ul li a {
+  font-size: medium;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+header .navbar ul li a:hover {
+  background-color: #fff;
+  color: orange;
+  border-bottom: 2px solid orange;
+  border-radius: 1px;
+}
+.breadcrumb {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10%;
+}
+.lightWeightText {
+  opacity: 0.5;
+}
+.container {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.details {
+  height: 100%;
+  margin-left: 10%;
+  display: flex;
+}
+.restaurantLogo {
+  width: 20%;
+  height: 20%;
+}
+.info > * {
+  margin: 10px;
+}
+.info {
+  margin-left: 3%;
+  font-size: medium;
+}
+
+.info > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  column-gap: 100px;
+}
+
+.otherInfo {
+  margin: 5px;
+  padding-right: 25px;
+}
+
+.offers {
+  margin-left: 10%;
+  margin-top: 3%;
+  max-width: 250px;
+}
+.offers div {
+  margin-top: 20px;
+  padding-left: 20px;
+  font-size: small;
+}
+
+.menu {
+  display: flex;
+  margin-left: 25%;
+}
+
+.menuItems {
+  display: flex;
+  margin-left: 1%;
+}
+.menuLinks {
   min-height: 100vh;
+  align-self: flex-start;
+  position: sticky;
+  top: 2rem;
+  border-right: 0.8px solid grey;
+  padding-top: 2rem;
+}
+
+.menuLinks a {
+  display: block;
+  text-decoration: none;
+  max-width: 200px;
+  color: black;
+  text-align: right;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  padding-right: 1.1rem;
+}
+.menuLinks a:hover {
+  color: orange;
+}
+
+.dishes {
+  padding: 2rem 0rem 0rem 2rem;
+}
+.b-bt-1 {
+  border-bottom: 1.5px solid black;
+}
+
+.categories {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.b-bt-05 {
+  border-bottom: 0.5px solid gray;
+}
+.dish > div:first-child * {
+  margin-top: 0.8rem;
+}
+.dish > div:last-child {
+  align-self: center;
+}
+
+.styledH3 {
+  font-weight: 520;
+  font-size: 1.2rem;
+}
+
+.styledP {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.styledDiv {
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: grey;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+.secondaryButton {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90px;
+  height: 100%;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: orange;
+  cursor: pointer;
+  border: 0.1px solid black;
+  border-radius: 5px;
+  padding: 7px 8px;
+}
+.secondaryButton:hover {
+  background-color: orange;
+  color: white;
+  opacity: 0.9;
+  box-shadow: 3px 3px 3px grey;
+}
+.dish .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.cart {
+  align-self: flex-start;
+  position: sticky;
+  top: 2rem;
+  padding-top: 2rem;
+  margin-left: 5%;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.secondaryH3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: gray;
+}
+.styledimg {
+  height: 280px;
+  width: 250px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.secondaryP {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  color: gray;
+  word-spacing: 2px;
+  line-height: 1.2em;
+  max-width: 218px;
+}
+
+.increase,
+.decrease {
+  width: max-content;
+}
+
+.cart {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cartIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
