@@ -34,7 +34,9 @@ class Header extends React.Component {
           </nav>
         </header>
         <section className='breadcrumb'>
-          <span class='lightWeightText'>Home / Banglore / RTM-Banglore / </span>
+          <span className='lightWeightText'>
+            Home / Banglore / RTM-Banglore /{' '}
+          </span>
           <span>Kitchens Of Punjab</span>
         </section>
       </>
