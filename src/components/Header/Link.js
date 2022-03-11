@@ -3,8 +3,10 @@ function Link(props) {
 
   return (
     <>
-      <img src={icon} alt={label} className='icon' />
-      <a href='/'>{label}</a>
+      <a href='/'>
+        <img src={icon} alt={label} className='headerIcon' />
+        <span>{label}</span>
+      </a>
     </>
   );
 }

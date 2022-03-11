@@ -28,6 +28,12 @@ export const headerLinksConfig = [
   },
 ];
 
+export const addressConfig = {
+  street: 'J.P Nagar',
+  city: 'Bangalore',
+  state: 'Karnataka',
+};
+
 export const breadcrumbConfig = [
   {
     label: 'Home',
