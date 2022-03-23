@@ -3,3 +3,18 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 65%;
+}
+body {
+  background-color: #f1f1f1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button {
+  cursor: pointer;
+}
+
+.lightWeightText {
+  opacity: 0.5;
+}

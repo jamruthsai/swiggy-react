@@ -1,0 +1,104 @@
+header {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  box-shadow: 3px 3px 3px grey;
+}
+
+header .logo img {
+  height: 70px;
+  transition: all 0.2s;
+}
+
+header .logo img:hover {
+  transform: scale(1.2);
+}
+
+header .navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  column-gap: 10px;
+  margin-right: 50px;
+}
+
+header .navbar ul li {
+  margin-left: 50px;
+}
+
+header .navbar ul li a {
+  font-size: medium;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+header .navbar ul li a:hover {
+  filter: invert(74%) sepia(40%) saturate(4486%) hue-rotate(358deg)
+    brightness(100%) contrast(108%);
+}
+
+.nav-left {
+  display: flex;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  cursor: pointer;
+}
+
+.street {
+  font-weight: bolder;
+  margin-right: 5px;
+  border-bottom: 2px solid #000;
+  border-radius: 2px;
+}
+.street:hover {
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+.others {
+  opacity: 0.5;
+  margin-right: 5px;
+}
+
+.location .icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.location .icon img {
+  filter: invert(74%) sepia(40%) saturate(4486%) hue-rotate(358deg)
+    brightness(100%) contrast(108%);
+}
+
+.breadcrumb {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 18rem;
+}
+
+.breadcrumb a {
+  color: #000;
+  text-decoration: none;
+}
+
+.headerIcon {
+  width: 22px;
+  height: 22px;
+  margin-right: 0.7rem;
+  position: relative;
+  top: 5px;
+}
+
+.icon {
+  width: 20px;
+}
