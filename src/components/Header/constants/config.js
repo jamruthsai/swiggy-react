@@ -29,26 +29,7 @@ export const headerLinksConfig = [
 ];
 
 export const addressConfig = {
-  street: 'J.P Nagar',
+  street: 'Marathalli',
   city: 'Bangalore',
   state: 'Karnataka',
 };
-
-export const breadcrumbConfig = [
-  {
-    label: 'Home',
-    isLink: true,
-  },
-  {
-    label: 'Banglore',
-    isLink: true,
-  },
-  {
-    label: 'RTM-Banglore',
-    isLink: true,
-  },
-  {
-    label: 'Kitchens Of Punjab',
-    isLink: false,
-  },
-];

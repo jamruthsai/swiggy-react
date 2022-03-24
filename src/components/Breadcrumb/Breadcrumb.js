@@ -1,6 +1,7 @@
-function Breadcrumb(props) {
-  const { breadcrumbConfig } = props;
-
+import React from 'react';
+import { breadcrumbConfig } from './constants/config.js';
+import './Breadcrumb.css';
+function Breadcrumb() {
   function renderBreadcrumb() {
     return breadcrumbConfig.map((item, index) => {
       if (item.isLink) {

@@ -1,0 +1,10 @@
+.breadcrumb {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-left: 18rem;
+}
+
+.breadcrumb a {
+  color: #000;
+  text-decoration: none;
+}

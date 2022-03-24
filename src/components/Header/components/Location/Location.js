@@ -1,5 +1,7 @@
-import downArrow from '../../images/downarrow.svg';
-
+import React from 'react';
+import downArrow from '../../../../images/downarrow.svg';
+import PropTypes from 'prop-types';
+import './Location.css';
 function Location(props) {
   const { addressConfig } = props;
   const { street, city, state } = addressConfig;
@@ -15,5 +17,13 @@ function Location(props) {
     </div>
   );
 }
+
+Location.propTypes = {
+  addressConfig: PropTypes.shape({
+    street: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+  }),
+};
 
 export default Location;
