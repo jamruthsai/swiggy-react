@@ -1,0 +1,50 @@
+.details {
+  padding-top: 5rem;
+  background-color: rgb(39, 35, 36);
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 11rem;
+}
+.restaurantLogo {
+  width: 22.7rem;
+  height: 14.7rem;
+}
+
+.loader {
+  margin-top: 30rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: grey;
+}
+
+.errorHandler {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.errorHandler img {
+  width: 50rem;
+  height: 50rem;
+}
+
+.errorHandler p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: grey;
+}
