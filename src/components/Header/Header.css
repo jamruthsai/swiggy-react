@@ -7,14 +7,6 @@ header {
   box-shadow: 3px 3px 3px grey;
 }
 
-.headerIcon {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.7rem;
-  position: relative;
-  top: 0.5rem;
-}
-
 header .logo img {
   height: 6rem;
   transition: all 0.2s;
@@ -26,6 +18,14 @@ header .logo img:hover {
 
 .nav-left {
   display: flex;
+}
+
+.headerIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.7rem;
+  position: relative;
+  top: 0.5rem;
 }
 
 .icon {
