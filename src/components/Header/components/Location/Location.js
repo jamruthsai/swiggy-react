@@ -1,7 +1,7 @@
 import React from 'react';
 import downArrow from '../../../../images/downarrow.svg';
 import PropTypes from 'prop-types';
-import './Location.css';
+import './location.css';
 function Location(props) {
   const { addressConfig } = props;
   const { street, city, state } = addressConfig;

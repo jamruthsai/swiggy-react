@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from './components/Link';
-import './HeaderLinks.css';
+import Link from './components/link/Link';
+import './headerLinks.css';
 import PropTypes from 'prop-types';
 
 function HeaderLinks(props) {

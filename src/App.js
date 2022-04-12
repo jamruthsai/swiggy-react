@@ -2,8 +2,8 @@
 import React from 'react';
 
 //Components
-import Header from './components/Header';
-import Breadcrumb from './components/Breadcrumb';
+import Header from './components/header';
+import Breadcrumb from './components/breadcrumb';
 import Restaurant from './pages/restaurant';
 
 //CSS

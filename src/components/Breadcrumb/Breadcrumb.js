@@ -1,6 +1,6 @@
 import React from 'react';
-import { breadcrumbConfig } from './constants/config.js';
-import './Breadcrumb.css';
+import { breadcrumbConfig } from './constants/breadcrum.general.js';
+import './breadcrumb.css';
 function Breadcrumb() {
   function renderBreadcrumb() {
     return breadcrumbConfig.map((item, index) => {

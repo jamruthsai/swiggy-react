@@ -1,8 +1,8 @@
 import React from 'react';
-import HeaderLinks from './components/HeaderLinks';
-import { headerLinksConfig, addressConfig } from './constants/config.js';
-import Location from './components/Location';
-import './Header.css';
+import HeaderLinks from './components/headerLinks';
+import { headerLinksConfig, addressConfig } from './constants/header.general';
+import Location from './components/location';
+import './header.css';
 function Header() {
   return (
     <header>
