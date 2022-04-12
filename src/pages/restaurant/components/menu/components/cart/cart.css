@@ -1,0 +1,56 @@
+.total {
+  display: flex;
+  column-gap: 17.8rem;
+}
+
+.cart {
+  align-self: flex-start;
+  position: sticky;
+  top: 0rem;
+  margin-left: 6rem;
+  padding-top: 5rem;
+}
+
+.increase,
+.decrease {
+  width: max-content;
+}
+
+.cartIcon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.cartItems div h1 {
+  font-size: large;
+}
+
+.cartItems div p {
+  font-size: small;
+  margin: 0.5rem 0;
+  width: 10.7rem;
+}
+
+.cartItems h4 {
+  font-size: medium;
+  margin-top: 0.5rem;
+}
+
+.checkout {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  width: 27rem;
+  padding: 1.3rem 2.9rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0.4rem 0.2rem;
+  cursor: pointer;
+}

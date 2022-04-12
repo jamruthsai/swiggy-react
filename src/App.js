@@ -2,19 +2,19 @@
 import React from 'react';
 
 //Components
-import RestaurantDetails from './components/restaurantDetails';
 import Header from './components/Header';
 import Breadcrumb from './components/Breadcrumb';
+import Restaurant from './pages/restaurant';
 
 //CSS
-import './App.css';
+import './app.css';
 
 function App() {
   return (
     <>
       <Header />
       <Breadcrumb />
-      <RestaurantDetails />
+      <Restaurant />
     </>
   );
 }

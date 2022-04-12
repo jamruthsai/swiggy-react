@@ -1,0 +1,34 @@
+.dish {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.dish > div:first-child * {
+  margin-top: 0.8rem;
+}
+.dish > div:last-child {
+  align-self: center;
+}
+
+.dishHeading {
+  font-weight: 500;
+  font-size: medium;
+}
+
+.dishPrice img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.dishDescription {
+  font-size: small;
+  letter-spacing: 0.3px;
+  color: grey;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+.dishButton {
+  text-transform: uppercase;
+}

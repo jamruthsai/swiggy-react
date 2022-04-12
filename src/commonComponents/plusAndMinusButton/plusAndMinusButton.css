@@ -1,0 +1,8 @@
+button {
+  display: flex;
+  justify-content: space-evenly;
+  width: 6.7rem;
+  height: 100%;
+  cursor: pointer;
+  padding: 0.6rem 0.7rem;
+}

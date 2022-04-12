@@ -1,0 +1,26 @@
+.menuLinks {
+  min-height: 100vh;
+  align-self: flex-start;
+  position: sticky;
+  top: 0rem;
+  border-right: 0.8px solid grey;
+  padding-top: 5rem;
+}
+
+.menuLinks a {
+  display: block;
+  text-decoration: none;
+  max-width: 18rem;
+  color: black;
+  text-align: right;
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  padding-right: 1.1rem;
+}
+.menuLinks a:hover {
+  color: orange;
+}
+
+.menuLinks a.active {
+  color: orange;
+}

@@ -27,7 +27,7 @@ IconWithLabel.defaultProps = {
 IconWithLabel.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default IconWithLabel;

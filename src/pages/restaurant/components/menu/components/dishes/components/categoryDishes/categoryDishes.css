@@ -1,0 +1,19 @@
+.categories:not(:last-child) {
+  border-bottom: 1.5px solid black;
+}
+
+.categories {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+.categories h2 {
+  font-size: 2rem;
+}
+.categories p {
+  margin-top: 5px;
+  font-size: small;
+}
+
+.categories .dish:not(:last-child) {
+  border-bottom: 0.5px solid gray;
+}

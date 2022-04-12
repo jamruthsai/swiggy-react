@@ -1,0 +1,22 @@
+.menu {
+  display: flex;
+  margin-left: 37rem;
+  column-gap: 1.8rem;
+}
+
+.cart p {
+  font-size: 1.4rem;
+  word-spacing: 2px;
+  line-height: 1.2em;
+  max-width: 22rem;
+}
+
+.cart h3 {
+  font-size: 2rem;
+  color: gray;
+}
+.emptyCartPlaceholder img {
+  width: 22.3rem;
+  height: 25rem;
+  margin: 1.8rem 0rem;
+}
