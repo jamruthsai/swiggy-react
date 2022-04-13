@@ -1,6 +1,7 @@
 //Libraries
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 //Helpers
 import _noop from 'lodash/noop';
@@ -51,12 +52,14 @@ function Cart(props) {
             className='currencyIcon'
           />
         </div>
-        <Button
-          className='checkout'
-          onClick={onCheckoutClick}
-          label={'Checkout'}
-          type={BUTTON_TYPES.PRIMARY}
-        />
+        <Link to='thank-you'>
+          <Button
+            className='checkout'
+            onClick={onCheckoutClick}
+            label={'Checkout'}
+            type={BUTTON_TYPES.PRIMARY}
+          />
+        </Link>
       </div>
     </div>
   );
