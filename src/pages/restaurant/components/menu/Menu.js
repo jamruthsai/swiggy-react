@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 //Helpers
-import saveItemToLocalStorage from '../../../../utils/saveItemToLocalStorage';
+import postItemToServer from '../../../../api/postItemToServer';
 import {
   getUpdatedQuantityPerDishById,
   getTotalItems,
@@ -44,7 +44,7 @@ class Menu extends React.Component {
 
   handleCheckout = () => {
     const { quantityPerDishById } = this.state;
-    saveItemToLocalStorage(SAVE_ITEM_TO_LOCAL_STORAGE, quantityPerDishById);
+    postItemToServer(SAVE_ITEM_TO_LOCAL_STORAGE, quantityPerDishById);
     this.resetCartItems();
   };
 
