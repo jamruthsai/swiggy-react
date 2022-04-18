@@ -6,6 +6,10 @@ import nonVeg from '../../../../../images/nonveg.png';
 import _values from 'lodash/values';
 import _sum from 'lodash/sum';
 import compose from '../../../../../utils/compose';
+import { v4 as uuidv4 } from 'uuid';
+
+//Constant
+import { POST_ITEM } from '../constants/menu.general';
 
 const getDish = (id) => (dish) => {
   return dish.id === id;
@@ -48,8 +52,14 @@ export function getUpdatedQuantityPerDishById(
 
 export const getTotalItems = compose(_sum, _values);
 
-export const updateQuantityPerDishByIdState = (updatedQuantity, dishId) => (
-  draft
-) => {
-  draft.quantityPerDishById[dishId] = updatedQuantity;
+export const updateQuantityPerDishByIdState =
+  (updatedQuantity, dishId) => (draft) => {
+    draft.quantityPerDishById[dishId] = updatedQuantity;
+  };
+
+export const getPostCartDetails = (quantityPerDishById) => {
+  return {
+    id: uuidv4(),
+    [POST_ITEM]: quantityPerDishById,
+  };
 };

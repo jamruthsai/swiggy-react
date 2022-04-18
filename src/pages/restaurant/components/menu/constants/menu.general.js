@@ -1,8 +1,11 @@
 export const INITIAL_STATE = {
   quantityPerDishById: {},
+  errorMessage: null,
+  redirectTo: false,
+  isPosting: false,
 };
 
-export const SAVE_ITEM_TO_LOCAL_STORAGE = 'Quantities';
+export const POST_ITEM = 'Quantities';
 
 export const ADD_NEW_DISH_TO_CART = 1;
 

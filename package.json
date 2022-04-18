@@ -22,6 +22,7 @@
     "react-spinning-wheel": "^2.1.0",
     "react-toast": "^1.0.3",
     "reselect": "^4.1.5",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

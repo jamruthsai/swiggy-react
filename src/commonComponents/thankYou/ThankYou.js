@@ -3,6 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+//Helper
+import { HOME_ROUTE } from '../../constants/routes';
+
 //Components
 import Button, { BUTTON_TYPES } from '../button';
 
@@ -15,7 +18,7 @@ function ThankYou(props) {
     <div className='thankYou'>
       <h1>Thank you for associating with us</h1>
       <p>{additionalInfo}</p>
-      <Link to='/'>
+      <Link to={HOME_ROUTE}>
         <Button
           className='goto'
           label={buttonLabel}
