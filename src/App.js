@@ -1,6 +1,7 @@
 //Libraries
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 //helpers
 import { HOME_ROUTE, CHECKOUT_ROUTE } from './constants/routes';
@@ -14,9 +15,11 @@ import ThankYou from './commonComponents/thankYou/ThankYou';
 //CSS
 import './app.css';
 
+import store from './store';
+
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Breadcrumb />
       <BrowserRouter>
@@ -33,7 +36,7 @@ function App() {
           <Route path={HOME_ROUTE} element={<Restaurant />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </Provider>
   );
 }
 
