@@ -1,51 +1,84 @@
 //Libraries
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Navigate } from 'react-router-dom';
 
 //Helpers
-import saveItemToLocalStorage from '../../../../utils/saveItemToLocalStorage';
+import postCartDetails from '../../../../api/postCartDetails';
 import {
   getUpdatedQuantityPerDishById,
   getTotalItems,
   updateQuantityPerDishByIdState,
+  getPostCartDetails,
 } from './helpers/menu.helper';
 import _keys from 'lodash/keys';
 import produce from 'immer';
+import { CHECKOUT_ROUTE } from '../../../../constants/routes';
 
 //Images
 import emptyCart from '../../../../images/emptycart.webp';
+import error from '../../../../images/error.svg';
 
 //Constants
 import {
   INITIAL_STATE,
-  SAVE_ITEM_TO_LOCAL_STORAGE,
   ADD_NEW_DISH_TO_CART,
   INCREMENT_DISH_QUANTITY,
   DECREMENT_DISH_QUANTITY,
   EMPTY_CART_DESCRIPTION,
 } from './constants/menu.general';
+import { DEFAULT_ERROR_MESSAGE } from '../../constants/restaurant.general';
 
 //Components
 import MenuLinks from './components/menuLinks';
 import Dishes from './components/dishes';
 import Cart from './components/cart';
 import Placeholder from '../../../../commonComponents/placeholder';
+import ErrorHandler from '../../../../commonComponents/errorHandler';
+import Loader from '../../../../commonComponents/loader';
 
 //CSS
 import './menu.css';
 
 class Menu extends React.Component {
   state = INITIAL_STATE;
-  resetCartItems() {
+
+  resetCartItems = () => {
     this.setState({
       quantityPerDishById: {},
     });
-  }
+  };
 
   handleCheckout = () => {
     const { quantityPerDishById } = this.state;
-    saveItemToLocalStorage(SAVE_ITEM_TO_LOCAL_STORAGE, quantityPerDishById);
-    this.resetCartItems();
+    const cartDetails = getPostCartDetails(quantityPerDishById);
+    this.setState({
+      isPosting: true,
+    });
+    postCartDetails(cartDetails)
+      .then(this.resetCartItems)
+      .then(this.setRedirectState)
+      .catch(this.handleError)
+      .finally(this.setPostingState);
+  };
+
+  setPostingState = () => {
+    this.setState({
+      isPosting: false,
+    });
+  };
+
+  setRedirectState = () => {
+    this.setState({
+      redirectTo: true,
+    });
+  };
+
+  handleError = (error) => {
+    const { message = DEFAULT_ERROR_MESSAGE } = error;
+    this.setState({
+      errorMessage: message,
+    });
   };
 
   addNewDishToCart = (event) => {
@@ -131,12 +164,38 @@ class Menu extends React.Component {
     );
   }
 
+  redirectToThankYouPage() {
+    const { redirectTo } = this.state;
+    if (redirectTo) {
+      return <Navigate to={CHECKOUT_ROUTE} />;
+    }
+  }
+
   render() {
-    const { quantityPerDishById } = this.state;
+    const { quantityPerDishById, errorMessage, isPosting } = this.state;
     const { dishes } = this.props;
     const categories = _keys(dishes);
+    if (isPosting) {
+      return (
+        <Loader
+          color='orange'
+          label='Saving Your Order...'
+          className='loader'
+        />
+      );
+    }
+    if (errorMessage) {
+      return (
+        <ErrorHandler
+          className='errorHandler'
+          message={errorMessage}
+          errorImg={error}
+        />
+      );
+    }
     return (
       <section className='menu'>
+        {this.redirectToThankYouPage()}
         <MenuLinks categories={categories} />
         <Dishes
           dishes={dishes}
