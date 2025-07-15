@@ -1,21 +1,19 @@
 //Libraries
 import React from 'react';
+import { connect } from 'react-redux';
 
 //Constants
-import {
-  INITIAL_STATE,
-  RESTAURANT_ID,
-  DEFAULT_ERROR_MESSAGE,
-} from './constants/restaurant.general';
+import { RESTAURANT_ID } from './constants/restaurant.general';
 
 //Images
 import nodata from '../../images/nodata.svg';
 import error from '../../images/error.svg';
 
 //Helpers
-import fetchRestaurantData from '../../api/fetchRestaurantData';
-import restaurantReader from './readers/restaurantReader';
 import _isEmpty from 'lodash/isEmpty';
+
+//Action Creators
+import { getRestaurantData } from './actions/restaurant.actions';
 
 //Components
 import Loader from '../../commonComponents/loader';
@@ -26,41 +24,25 @@ import Menu from './components/menu';
 //CSS
 import './restaurants.css';
 
+const mapStateToProps = (state) => {
+  const { restaurant } = state;
+  return restaurant;
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getRestaurantData: () => {
+    dispatch(getRestaurantData(RESTAURANT_ID));
+  },
+});
+
 class Restaurant extends React.Component {
-  state = INITIAL_STATE;
   componentDidMount() {
-    this.getRestaurantData();
+    const { getRestaurantData } = this.props;
+    getRestaurantData();
   }
-  getRestaurantData() {
-    fetchRestaurantData(RESTAURANT_ID)
-      .then(this.setRestaurantState)
-      .catch(this.handleError)
-      .finally(this.setAsLoaded);
-  }
-  setRestaurantState = (restaurantData) => {
-    const dishes = restaurantReader.dishes(restaurantData);
-    const restaurantDetails = restaurantReader.details(restaurantData);
-    this.setState({
-      restaurantDetails,
-      dishes,
-    });
-  };
 
-  handleError = (error) => {
-    const { message = DEFAULT_ERROR_MESSAGE } = error;
-
-    this.setState({
-      errorMessage: message,
-    });
-  };
-
-  setAsLoaded = () => {
-    this.setState({
-      isLoading: false,
-    });
-  };
   renderRestaurantData() {
-    const { restaurantDetails } = this.state;
+    const { restaurantDetails } = this.props;
     const isRestaurantDetailsEmpty = _isEmpty(restaurantDetails);
     if (isRestaurantDetailsEmpty) {
       return (
@@ -79,7 +61,7 @@ class Restaurant extends React.Component {
     );
   }
   renderDishes() {
-    const { dishes } = this.state;
+    const { dishes } = this.props;
     const isDishesEmpty = _isEmpty(dishes);
     if (isDishesEmpty) {
       return (
@@ -93,7 +75,8 @@ class Restaurant extends React.Component {
     return <Menu dishes={dishes} />;
   }
   render() {
-    const { isLoading, errorMessage } = this.state;
+    console.log(this.props);
+    const { isLoading, errorMessage } = this.props;
     if (isLoading) {
       return <Loader color='orange' label='Loading...' className='loader' />;
     }
@@ -110,4 +93,4 @@ class Restaurant extends React.Component {
   }
 }
 
-export default Restaurant;
+export default connect(mapStateToProps, mapDispatchToProps)(Restaurant);

@@ -1,0 +1,7 @@
+export const SET_RESTAURANT_DATA = 'SET_RESTAURANT_DATA';
+
+export const SET_ERROR_MESSAGE = 'SET_ERROR_MESSAGE';
+
+export const SET_AS_LOADING = 'SET_AS_LOADING';
+
+export const SET_AS_LOADED = 'SET_AS_LOADED';
